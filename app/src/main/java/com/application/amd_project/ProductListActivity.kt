@@ -1,4 +1,4 @@
-package com.yourpackage.shoesapp
+package com.application.amd_project
 
 import android.content.res.Configuration
 import android.os.Bundle

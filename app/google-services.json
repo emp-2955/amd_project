@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1000953249838",
+    "project_id": "amd-project-1bb03",
+    "storage_bucket": "amd-project-1bb03.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1000953249838:android:4969163c2b8a0eee48dfbf",
+        "android_client_info": {
+          "package_name": "com.application.amd_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHNHeQhVsB6PZjJftpBRZksbOBtxTMSIE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
