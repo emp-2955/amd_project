@@ -8,7 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.application.amd_project.R
+import com.application.amd_project.models.Shoe
 import com.google.firebase.firestore.FirebaseFirestore
+import com.yourpackage.shoesapp.ShoeAdapter
 
 class ProductListActivity : AppCompatActivity() {
 

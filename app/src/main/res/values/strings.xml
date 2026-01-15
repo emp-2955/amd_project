@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">amd_project</string>
+    <string name="signup_login_text">
+    Already have an account? <font color="#1a73e8"><b>Sign in</b></font>
+    </string>
+    <string name="login_signup_text">
+        Don't have an account? <font color="#1a73e8"><b>Sign Up</b></font>
+    </string>
+
 </resources>
