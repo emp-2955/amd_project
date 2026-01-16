@@ -1,10 +1,4 @@
-package com.application.amd_project
-
-import android.content.Intent
-import android.os.Bundle
-import android.widget.Button
-import androidx.appcompat.app.AppCompatActivity
-import com.yourpackage.shoesapp.CategoryActivity
+import com.application.amd_project.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,29 +6,29 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavigation)
 
+        // Set Home as default selected
+        bottomNav.selectedItemId = R.id.nav_home
 
-        val btnMen = findViewById<Button>(R.id.btnMen)
-        val btnWomen = findViewById<Button>(R.id.btnWomen)
-        val btnKids = findViewById<Button>(R.id.btnKids)
-
-        btnMen.setOnClickListener {
-            openCategoryScreen("men")
+        // Load Home fragment by default
+        if (savedInstanceState == null) {
+            loadFragment(HomeFragment())
         }
 
-        btnWomen.setOnClickListener {
-            openCategoryScreen("women")
-        }
-
-        btnKids.setOnClickListener {
-            openCategoryScreen("kids")
+        bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_home -> loadFragment(HomeFragment())
+                R.id.nav_cart -> loadFragment(CartFragment())
+                R.id.nav_profile -> loadFragment(ProfileFragment())
+            }
+            true
         }
     }
 
-    private fun openCategoryScreen(gender: String) {
-        val intent = Intent(this, CategoryActivity::class.java).apply {
-            putExtra("gender", gender)
-        }
-        startActivity(intent)
+    private fun loadFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainer, fragment)
+            .commit()
     }
 }
