@@ -7,6 +7,22 @@
     android:orientation="vertical"
     android:background="@android:color/white">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/material_dynamic_neutral50">
+
+        <ImageView
+            android:id="@+id/logoImage"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="start|center_vertical"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/sneakspotlight" />
+
+    </androidx.appcompat.widget.Toolbar>
+
     <!-- Fragment Container -->
     <FrameLayout
         android:id="@+id/fragmentContainer"
@@ -23,4 +39,5 @@
         app:menu="@menu/bottom_nav_menu"
         app:labelVisibilityMode="labeled"
      />
+
 </LinearLayout>

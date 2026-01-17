@@ -1,0 +1,118 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Product Image -->
+            <ImageView
+                android:id="@+id/imgShoe"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:contentDescription="shoe image"
+                android:scaleType="fitCenter"
+                android:src="@drawable/sneakspotlight"/>
+
+            <!-- Shoe Name -->
+            <TextView
+                android:id="@+id/tvShoeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nike Air Max"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"/>
+
+            <!-- Size Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Available Sizes"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"/>
+
+            <!-- Sizes Radio Group -->
+            <RadioGroup
+                android:id="@+id/rgSizes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <RadioButton
+                    android:id="@+id/size6"
+                    style="@style/SizeTextRadio"
+                    android:text="6"/>
+
+                <RadioButton
+                    android:id="@+id/size7"
+                    style="@style/SizeTextRadio"
+                    android:text="7"/>
+
+                <RadioButton
+                    android:id="@+id/size8"
+                    style="@style/SizeTextRadio"
+                    android:text="8"/>
+
+                <RadioButton
+                    android:id="@+id/size9"
+                    style="@style/SizeTextRadio"
+                    android:text="9"/>
+
+                <RadioButton
+                    android:id="@+id/size10"
+                    style="@style/SizeTextRadio"
+                    android:text="10"/>
+
+            </RadioGroup>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Navbar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:elevation="10dp"
+        android:background="@color/white">
+
+        <!-- Price -->
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="₹2,999"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center_vertical"/>
+
+        <!-- Add to Cart -->
+        <Button
+            android:id="@+id/btnAddToCart"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Add to Cart"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/black"/>
+
+    </LinearLayout>
+
+</LinearLayout>
