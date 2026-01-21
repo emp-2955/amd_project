@@ -1,12 +1,14 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    id("com.google.gms.google-services")
-}
+    id("com.google.gms.google-services") }
+
+apply(plugin = "kotlin-parcelize")
+
 
 android {
     namespace = "com.application.amd_project"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.application.amd_project"
@@ -49,4 +51,5 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(platform("com.google.firebase:firebase-bom:34.7.0"))
     implementation("com.google.firebase:firebase-analytics")
+
 }

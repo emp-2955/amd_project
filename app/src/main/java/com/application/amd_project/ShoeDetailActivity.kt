@@ -1,9 +1,9 @@
 package com.application.amd_project
 
-import android.graphics.Color
 import android.os.Bundle
 import android.widget.ImageView
-import android.widget.LinearLayout
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.application.amd_project.models.Shoe
@@ -14,29 +14,28 @@ class ShoeDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shoe_detail)
 
+        val shoe = intent.getParcelableExtra<Shoe>("shoe") ?: return
+
+
 
         val imgShoe = findViewById<ImageView>(R.id.imgShoe)
-        val tvName = findViewById<TextView>(R.id.tvName)
+        val tvName = findViewById<TextView>(R.id.tvShoeName)
         val tvPrice = findViewById<TextView>(R.id.tvPrice)
-        val tvCategory = findViewById<TextView>(R.id.tvCategory)
-        val sizeContainer = findViewById<LinearLayout>(R.id.sizeContainer)
+        val sizeContainer = findViewById<RadioGroup>(R.id.rgSizes)
 
-        tvName.text = Shoe.name
-        tvPrice.text = "₹${Shoe.price}"
-        tvCategory.text = "${Shoe.gender} • ${shoe.category}"
+        tvName.text = shoe.name
+        tvPrice.text = "₹${shoe.price}"
 
-        // Load image (use Glide)
-       //TODO
-
-        // Add sizes dynamically
+        // Add sizes dynamically as RadioButtons
         for (size in shoe.sizes) {
-            val textView = TextView(this).apply {
+            val radioButton = RadioButton(this).apply {
                 text = size.toString()
-                setPadding(32, 16, 32, 16)
-                setBackgroundResource(android.R.drawable.btn_default)
-                setTextColor(Color.BLACK)
+                id = size  // unique id
             }
-            sizeContainer.addView(textView)
+            sizeContainer.addView(radioButton)
         }
     }
+
+
+
 }

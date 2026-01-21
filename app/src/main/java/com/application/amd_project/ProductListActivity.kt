@@ -2,15 +2,13 @@ package com.application.amd_project
 
 import android.content.res.Configuration
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.application.amd_project.R
+import com.application.amd_project.adapter.ShoeAdapter
 import com.application.amd_project.models.Shoe
 import com.google.firebase.firestore.FirebaseFirestore
-import com.yourpackage.shoesapp.ShoeAdapter
 
 class ProductListActivity : AppCompatActivity() {
 
@@ -32,7 +30,7 @@ class ProductListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product_list)
 
-        gender = intent.getStringExtra(EXTRA_GENDER) ?: ""
+
         category = intent.getStringExtra(EXTRA_CATEGORY) ?: ""
 
         recyclerView = findViewById(R.id.recyclerShoes)
@@ -48,7 +46,6 @@ class ProductListActivity : AppCompatActivity() {
         recyclerView.layoutManager = GridLayoutManager(this, spanCount)
         recyclerView.setHasFixedSize(true)
 
-        shoeAdapter = ShoeAdapter(shoeList, gender)
         recyclerView.adapter = shoeAdapter
     }
 

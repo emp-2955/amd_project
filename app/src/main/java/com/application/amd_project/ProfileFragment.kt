@@ -9,7 +9,6 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.yourpackage.app.ui.orders.OrderDetailsActivity
 
 class ProfileFragment : Fragment() {
 
@@ -29,7 +28,6 @@ class ProfileFragment : Fragment() {
         // Initialize views
         listOrders = view.findViewById(R.id.listOrders)
         tvEditProfile = view.findViewById(R.id.tvEditProfile)
-        tvSavedAddress = view.findViewById(R.id.tvSavedAddress)
         btnSignOut = view.findViewById(R.id.btnSignOut)
 
         setupOrders()
@@ -72,17 +70,13 @@ class ProfileFragment : Fragment() {
             )
         }
 
-        tvSavedAddress.setOnClickListener {
-            startActivity(
-                Intent(requireContext(), SavedAddressActivity::class.java)
-            )
-        }
+
 
         btnSignOut.setOnClickListener {
             // Firebase sign out can be added here later
             // FirebaseAuth.getInstance().signOut()
 
-            val intent = Intent(requireContext(), LoginActivity::class.java)
+            val intent = Intent(requireContext(), SignInActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }

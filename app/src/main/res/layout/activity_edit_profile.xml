@@ -73,6 +73,7 @@
     <com.google.android.material.button.MaterialButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/submitBtn"
         android:layout_gravity="center_horizontal"
         android:backgroundTint="@color/white"
         android:text="Submit"

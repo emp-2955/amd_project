@@ -1,10 +1,8 @@
-package com.yourpackage.app.ui.orders
+package com.application.amd_project
 
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.application.amd_project.R
-import com.yourpackage.app.R
 
 class OrderDetailsActivity : AppCompatActivity() {
 

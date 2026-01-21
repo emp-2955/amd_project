@@ -1,4 +1,4 @@
-package com.yourpackage.shoesapp
+package com.application.amd_project
 
 import android.content.Intent
 import android.os.Bundle
@@ -25,7 +25,7 @@ class CategoryActivity : ComponentActivity() {
         val btnFormal = findViewById<Button>(R.id.btnFormal)
         val btnSports = findViewById<Button>(R.id.btnSports)
 
-        btnCasual.setOnClickListener {
+        /*  btnCasual.setOnClickListener {
             openProductList("casual")
         }
 
@@ -44,5 +44,7 @@ class CategoryActivity : ComponentActivity() {
             putExtra(EXTRA_CATEGORY, category)
         }
         startActivity(intent)
+    }
+}*/
     }
 }
